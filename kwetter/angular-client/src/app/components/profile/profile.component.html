@@ -1,0 +1,71 @@
+<div class="row">
+  <h1 class="page-header">Dashboard</h1>
+</div>
+<div class="row">
+  <div class="col-lg-6">
+      <div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Users</h3>
+						<div class="pull-right">
+							<span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" (click)="showUserSearchBar = !showUserSearchBar">
+								<i class="glyphicon glyphicon-filter"></i>
+							</span>
+						</div>
+					</div>
+					<div class="panel-body" [hidden]="!showUserSearchBar">
+						<input type="text" class="form-control" [(ngModel)]="searchTextUsers" name="searchTextUsers" placeholder="Filter users" />
+            <p>{{searchText}}</p>
+					</div>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Username</th>
+								<th>Email</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let user of (users | searchFilter: searchTextUsers )">
+								<td>{{user._id}}</td>
+								<td>{{user.username}}</td>
+								<td>{{user.email}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+  </div>
+  <div class="col-lg-6">
+      <div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Kweets</h3>
+						<div class="pull-right">
+							<span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" (click)="showKweetsSearchBar = !showKweetsSearchBar">
+								<i class="glyphicon glyphicon-filter"></i>
+							</span>
+						</div>
+					</div>
+					<div class="panel-body" [hidden]="!showKweetsSearchBar">
+						<input type="text" class="form-control" [(ngModel)]="searchTextKweets" name="searchTextKweets" placeholder="Filter users" />
+            <p>{{searchText}}</p>
+					</div>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Username</th>
+								<th>Message</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let kweet of (kweets | searchFilter: searchTextKweets )">
+								<td>{{kweet.owner}}</td>
+								<td>{{kweet.message}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+  </div>
+</div>
+
+
+
+

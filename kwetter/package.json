@@ -1,0 +1,22 @@
+{
+  "name": "kwetter",
+  "version": "1.0.0",
+  "description": "Kwetter applicatie",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "*",
+    "mongoose": "*",
+    "bcryptjs": "*",
+    "cors": "*",
+    "jsonwebtoken": "*",
+    "passport": "*",
+    "passport-jwt": "*"
+  }
+}
